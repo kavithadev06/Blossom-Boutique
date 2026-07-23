@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Blossom Boutique</title>
     <style>
         body{
@@ -11,8 +12,8 @@
 
 .First{
     width:100%;
-    height: 100vh;
-
+    min-height: 100vh;
+    position: relative;
     
 }
 
@@ -21,7 +22,7 @@
     top:120px;
     left:70px;
     color:white;
-    z-index:1;
+    z-index:2;
     width: 45%;
     top: 150px;
 }
@@ -29,6 +30,7 @@
 .F2{
     width:100%;
     height:100vh;
+    overflow: hidden;
     
 }
 
@@ -106,7 +108,7 @@ button:hover{
     width:100%;
     min-height:100vh;
     background:white;
-    padding:100px 60px;
+    padding:90px 60px 80px;
     box-sizing:border-box;
     
 }
@@ -115,10 +117,9 @@ button:hover{
     text-align:center;
     font-size:55px;
     color:#ff4d94;
-    margin-bottom:50px;
-    margin-top: -90px;
+    margin-bottom:30px;
+    margin-top: 0;
 }
-
 .Abox{
     display:flex;
     justify-content:space-between;
@@ -132,7 +133,7 @@ button:hover{
 
 .S2 video{
     width:100%;
-    height:450px;
+    height:380px;
     object-fit:cover;
     border-radius:10px;
     
@@ -210,13 +211,7 @@ button:hover{
     margin-bottom:20px;
 }
 html{
-    scroll-behavior:smooth;
-}
-
-#home,
-#about,
-#explore{
-    scroll-margin-top:80px;
+    scroll-behavior: smooth;
 }
 .Fourth{
     width:100%;
@@ -309,11 +304,44 @@ html{
 .login-box button{
     width:100%;
 }
+.Error{
+    color: red;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    display: block;
+}
+.password-box{
+    position: relative;
+    width: 100%;
+}
+
+.password-box input{
+    width: 100%;
+    padding-right: 45px;
+}
+
+#togglePassword{
+    position: absolute;
+    right: 15px;
+    top: 38%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 18px;
+    display: none;
+}
+
+#togglePassword:hover{
+    color:#E91E63;
+}
+
+
 .Fifth{
     width:100%;
     min-height:100vh;
     background:#fff;
-    padding:80px;
+    padding:70px 80px 80px;
     box-sizing:border-box;
     overflow: auto;
 }
@@ -322,7 +350,8 @@ html{
     text-align:center;
     font-size:50px;
     color:#ff4d94;
-    margin-bottom:50px;
+    margin-bottom:30px;
+    margin-top: 20px;
 }
 
 .contact-box{
@@ -374,6 +403,249 @@ html{
     color:#555;
     line-height:35px;
 }
+#themeBtn{
+    margin-left:20px;
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    background:#E91E63;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+.dark-mode{
+    background:#222;
+    color:white;
+}
+
+.dark-mode .Second,
+.dark-mode .Third,
+.dark-mode .Fourth,
+.dark-mode .Fifth{
+    background:#222;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode a{
+ color:white;
+}
+.dark-mode .header{
+    background:#1f1f1f;
+}
+
+.dark-mode .header a,
+.dark-mode .header h2{
+    color:white;
+}
+
+.dark-mode .F1 h1,
+.dark-mode .F1 h2,
+.dark-mode .F1 p{
+    color:white;
+}
+
+.dark-mode .First::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:1;
+}
+
+.F1{
+    z-index:2;
+}
+.dark-mode .right{
+    background:#ffe6f0;
+}
+
+.dark-mode .right h2,
+.dark-mode .right p{
+    color:#333;
+}
+.dark-mode .header{
+    background:#1f1f1f;
+}
+
+.dark-mode .nav a,
+.dark-mode .header h2{
+    color:white;
+}
+.dark-mode .login-box{
+    background:white;
+}
+
+.dark-mode .login-box input{
+    color:black;
+}
+
+.dark-mode .login-box input::placeholder{
+    color:#666;
+}
+.dark-mode .forgot{
+    color:#E91E63;
+}
+
+.dark-mode .signup{
+    color:white;
+}
+
+.dark-mode .signup a{
+    color:#ff69b4;
+}
+.dark-mode .card{
+    background:white;
+}
+
+.dark-mode .card h3{
+    color:#222;
+}
+
+.dark-mode .card p{
+    color:#666;
+}
+#topBtn{
+    display:none;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#E91E63;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    z-index:99999;
+   
+}
+
+#topBtn:hover{
+    background:#C2185B;
+    transform:scale(1.1);
+}
+@media (max-width:768px){
+
+.header{
+    flex-direction:column;
+    align-items:center;
+    height:auto;
+    padding:15px;
+}
+
+.header h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.nav a{
+    margin:0;
+    font-size:16px;
+}
+
+#themeBtn{
+    width:auto;
+    padding:8px 15px;
+    margin:10px auto 0;
+}
+
+.F1{
+    position:static;
+    width:90%;
+    margin:20px auto;
+    text-align:center;
+}
+
+.F1 h1{
+    font-size:36px;
+    margin-top:20px;
+}
+
+.F1 h2{
+    font-size:22px;
+    margin-top:10px;
+}
+
+.F1 p{
+    font-size:16px;
+    line-height:26px;
+}
+
+.F2{
+    height:300px;
+}
+
+.Abox,
+.contact-box{
+    flex-direction:column;
+    gap:30px;
+}
+
+.S2,
+.S3,
+.left,
+.right{
+    width:100%;
+}
+
+.S2 video{
+    height:250px;
+}
+
+.T2{
+    grid-template-columns:1fr;
+}
+
+.login-box{
+    width:90%;
+    padding:25px;
+}
+
+button{
+    width:100%;
+}
+
+#themeBtn{
+    width:auto;
+}
+
+#topBtn{
+    width:45px;
+    height:45px;
+    right:15px;
+    bottom:15px;
+}
+
+.Second,
+.Third,
+.Fifth{
+    padding:60px 20px;
+}
+.First{
+    min-height:auto;
+}
+
+.F2{
+    height:220px;
+}
+
+.F2 img{
+    height:220px;
+    object-fit:cover;
+}
+
+}
     </style>
 </head>
 <body>
@@ -404,6 +676,7 @@ html{
         <a href="#explore">Explore</a>
         <a href="#login">Login</a>
         <a href="#contact">Contact</a>
+        <button id="themeBtn">🌙</button>
     </nav>
 </header>
 
@@ -474,22 +747,30 @@ html{
 
     <h1 class="L1">Login</h1>
 
-    <div class="login-box">
+   <form class="login-box" id="loginForm">
 
-        <input type="text" placeholder="Enter Username">
+        <input type="text" id="UserName" placeholder="Enter UserName">
+        <small id="UserNameError" class="Error"></small>
 
-        <input type="password" placeholder="Enter Password">
+        <div class="password-box">
+        <input type="password" id="Password" placeholder="Enter Password">
+        <i class="fa-regular fa-eye-slash" id="togglePassword"></i>
+        </div>
+
+        <small id="PasswordError" class="Error"></small>
         <a href="#" class="forgot">Forgot Password</a>
 
-        <button>Login</button>
+        <button type="submit">Login</button>
         <p class="signup">
             Don't have an account?
             <a href="#">Sign up</a>
         </p>
 
-    </div>
+    
 
+</form>
 </div>
+
 <div class="Fifth" id="contact">
 
     <h1 class="C1">Contact Us</h1>
@@ -498,15 +779,19 @@ html{
 
         <div class="left">
 
-            <input type="text" placeholder="Your Name">
+            <input type="text" id="contactName" placeholder="Your Name">
+       <small id="nameError" class="Error"></small>
 
-            <input type="email" placeholder="Your Email">
+       <input type="email" id="contactEmail" placeholder="Your Email">
+       <small id="emailError" class="Error"></small>
 
-            <input type="text" placeholder="Subject">
+       <input type="text" id="contactSubject" placeholder="Subject">
+       <small id="subjectError" class="Error"></small>
 
-            <textarea placeholder="Your Message"></textarea>
+        <textarea id="contactMessage" placeholder="Your Message"></textarea>
+        <small id="messageError" class="Error"></small>
 
-            <button>Send Message</button>
+        <button type="button" id="sendBtn">Send Message</button>
 
         </div>
 
@@ -527,5 +812,8 @@ html{
     </div>
 
 </div>
+<button id="topBtn">↑</button>
+<script src="script.js"></script>
+
 </body>
 </html>
